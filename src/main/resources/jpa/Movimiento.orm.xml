@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+			     				     http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+                 version="1.0">
+
+    <mapped-superclass class="comun.MovimientoImpl" access="FIELD">
+        <attributes>
+            <basic name="fecha">
+                <column name="FECHA"/>
+            </basic>
+            <many-to-one name="categoria" target-entity="es.gastosApi.entidades.CategoriaConId">
+                <join-column name="categoria_id" referenced-column-name="ID"/>
+                <cascade>
+                    <cascade-all/>
+                </cascade>
+            </many-to-one>
+        </attributes>
+    </mapped-superclass>
+</entity-mappings>

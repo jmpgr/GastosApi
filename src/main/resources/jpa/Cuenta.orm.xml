@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+			     				     http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+                 version="1.0">
+
+    <mapped-superclass class="comun.Cuenta" access="FIELD">
+        <attributes>
+            <basic name="iban">
+                <column name="IBAN"/>
+            </basic>
+            <one-to-many name="movimientos" target-entity="es.gastosApi.entidades.MovimientoConId" mapped-by="cuenta">
+                <cascade>
+                    <cascade-all/>
+                </cascade>
+            </one-to-many>
+        </attributes>
+    </mapped-superclass>
+</entity-mappings>

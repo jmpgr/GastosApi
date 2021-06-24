@@ -1,0 +1,5 @@
+rootProject.name = 'GastosApi'
+
+includeFlat 'Gastos'
+project(':Gastos').projectDir = new File('../misG-main')
+
